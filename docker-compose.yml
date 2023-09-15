@@ -1,0 +1,12 @@
+services:
+  soundbot:
+    build: .
+    hostname: ${DOCKERHOSTNAME}
+    container_name: gcp-dot-bot
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+    env_file:
+      - .env
+    restart: always
